@@ -40,7 +40,7 @@ function change_myselect(sel) {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       myObj = JSON.parse(this.responseText);
-      txt += "<table border='2'><tr><td>NOMBRE</td><td>PROTAGONISTA</td></tr>"+
+      txt += "<table border='2'><tr><td>NOMBRE</td><td>PROTAGONISTA</td></tr>";
       
       for (x in myObj.peliculas) {
         if(myObj.peliculas[x].Genero==sel){
