@@ -11,12 +11,15 @@
 <body>
 <div>
     <img id="background" src="../../Imagenes/fondo.jpg"/> 
+    <br>
+    <img src="../../Imagenes/selloespe.jpg" width="600px">
+    <h1 align="center">Pregunta 3</h1>
   </div>
   <div id="fixed" style="padding-left:140px; padding-top: 50px;">
 <h2>Pregunta 3</h2>
-
+<p>Escoja su género de películas preferido para desplegar una tabla con la información correspondiente</p>
 <select id="myselect" onchange="change_myselect(this.value)">
-  <option value="">Elija una de las siguientes opciones. Acorde al género de película que desea ver:</option>
+  <option value="">Elija una de las siguientes opciones.</option>
   <option value="Terror">Terror</option>
   <option value="Drama">Drama</option>
   <option value="Accion">Accion</option>
@@ -37,7 +40,7 @@ function change_myselect(sel) {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       myObj = JSON.parse(this.responseText);
-      txt += "<table border='2'>"
+      txt += "<table border='2'><tr><td>NOMBRE</td><td>PROTAGONISTA</td></tr>"+
       
       for (x in myObj.peliculas) {
         if(myObj.peliculas[x].Genero==sel){
