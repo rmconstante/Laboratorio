@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<snf-pais xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<pais>
+		<id>EC</id>
+		<nombre_pais>Ecuador</nombre_pais>
+		<capital>Quito</capital>
+	</pais>
+	<pais>
+		<id>AE</id>
+		<nombre_pais>Emirates Arabes Unidos</nombre_pais>
+		<capital>Abu Dhabi</capital>
+	</pais>
+	<pais>
+		<id>AT</id>
+		<nombre_pais>Austria</nombre_pais>
+		<capital>Viena</capital>
+	</pais>
+	<pais>
+		<id>AU</id>
+		<nombre_pais>Australia</nombre_pais>
+		<capital>Canberra</capital>
+	</pais>
+	<pais>
+		<id>BE</id>
+		<nombre_pais>Bélgica</nombre_pais>
+		<capital>Bruselas</capital>
+	</pais>
+	<pais>
+		<id>BR</id>
+		<nombre_pais>Brazil</nombre_pais>
+		<capital>Brasil</capital>
+	</pais>
+	<pais>
+		<id>CA</id>
+		<nombre_pais>Canada</nombre_pais>
+		<capital>Ottawa</capital>
+	</pais>
+	<pais>
+		<id>CH</id>
+		<nombre_pais>Suiza</nombre_pais>
+		<capital>Berna</capital>
+	</pais>
+</snf-pais>

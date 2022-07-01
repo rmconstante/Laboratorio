@@ -1,59 +1,72 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Grupo01-Pregunta 3</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <style type="text/css">
-    #background{position:absolute; width:99%; height:130%;}
-    #fixed {position:absolute; top: 0px; left: 0px;}
-  </style>
-</head>
-<body>
-<div>
-    <img id="background" src="../../Imagenes/fondo.jpg"/> 
-  </div>
-  <div id="fixed" style="padding-left:140px; padding-top: 50px;">
-<h2>Pregunta 3</h2>
-
-<select id="myselect" onchange="change_myselect(this.value)">
-  <option value="" disabled>Elija una de las siguientes opciones. Acorde al género de película que desea ver:</option>
-  <option value="Terror">Terror</option>
-  <option value="Drama">Drama</option>
-  <option value="Accion">Accion</option>
-</select>
-
-<p id="demo"></p>
-<br>
-<button onclick="window.location.href='../../index.html'">Menu principal</button>
-</div>
-
-<script>
-
-function change_myselect(sel) {
-  var obj, dbParam, xmlhttp, myObj, x, txt = "";
-  obj = { table: sel, limit: 20 };
-  dbParam = JSON.stringify(obj);
-  xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myObj = JSON.parse(this.responseText);
-      txt += "<table border='2'>"
-      
-      for (x in myObj.peliculas) {
-        if(myObj.peliculas[x].Genero==sel){
-          txt += "<tr><td>" + myObj.peliculas[x].Nombre + "</td><td>"+myObj.peliculas[x].Protagonista+"</td></tr>";
-        }
-    
-  }
-      txt += "</table>"    
-      document.getElementById("demo").innerHTML = txt;
-      }
-    };
-  xmlhttp.open("GET", "./ListaPeliculas.json", true);
-  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.send("x=" + dbParam);
-}
-</script>
-
-</body>
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>GRUPO 04_LABORATORIO</title>
+		<style type="text/css">
+			#background{position:absolute; width:99%; height:130%;}
+			#fixed {position:absolute; top: 0px; left: 0px;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="background" src="Imagenes/fondo.jpg"/> 
+		</div>
+		<div id="fixed">
+			</br></br></br>
+			<div style="padding-left:510px;">
+				<img src="Imagenes/selloespe.jpg" alt="ESPE" height="100" >
+			</div>
+			<div style="padding-left:395px;">
+				<h2>
+					<p style="text-align: center" style="color:#165014" ;>DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN</p>
+					<p style="text-align: center" style="color:#165014" ;>INGENIERÍA EN SISTEMAS E INFORMÁTICA</p>
+				</h2>
+				<h3>
+					<p style="text-align: center" style="color:#165014" ;>APLICACION DE TECNOLOGIAS WEB</p>
+				</h3>
+			</div>
+			<div style="padding-left:200px;">
+				<h4><p style="color:#1f1450";>Integrantes: </p></h4>				
+				<ul>
+					<li>Byron Roberto Ávalos Pérez</li>
+					<li>Kevin Alexander Cando Sisalema</li>
+					<li>Henry Sebastián Jaramillo Jácome</li>
+				</ul>				
+				<h4><p style="color:#1f1450";>NRC: 7383</p></h4>
+				<h4><p style="color:#1f1450";>Fecha: 11/01/2022</p></h4>
+			</div>
+			
+			<div style="padding-left:250px;">
+				</br></br></br>
+				<h2><p style="text-align: center"> LABORATORIO</p></h2>
+			</div>
+			
+				<div style="padding-left:250px;">
+					<table border="3px" align="center">
+						<tr>
+							<th>Item</th>
+							<th>Descripción</th>
+						</tr>
+						<tr>
+							<td style="text-align: center";><a href="Solucionario/PREGUNTA_1/index.html">1</a></td>
+							<td>1. PREGUNTA 1</td>
+						</tr>
+						<tr>
+							<td style="text-align: center";><a href="Solucionario/PREGUNTA_2/index.html">2</a></td>
+							<td>2. PREGUNTA 2</td>
+						</tr>
+						<tr>
+							<td style="text-align: center";><a href="Solucionario/PREGUNTA_3/index.html">3</a></td>
+							<td>3. PREGUNTA 3</td>
+						</tr>
+						<tr>
+							<td style="text-align: center";><a href="Solucionario/PREGUNTA_4/index.html">4</a></td>
+							<td>4. PREGUNTA 4</td>
+						</tr>
+					</table>
+				</div>
+			</div>						
+		</div> 		
+	</body>
 </html>

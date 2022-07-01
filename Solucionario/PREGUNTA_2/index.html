@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+		<style type="text/css">
+			#background{position:absolute; width:99%; height:130%;}
+			#fixed {position:absolute; top: 0px; left: 0px;}
+		</style>
+<head>
+  <title>Grupo04-Pregunta 2</title>
+</head>
+<body>
+	<div>
+      <img id="background" src="../../Imagenes/fondo.jpg"/> 
+    </div>
+    <div id="fixed" style="padding-left:140px; padding-top: 50px;">
+		<h2>Pregunta 2</h2>
+		<p>Mediante un archivo XML, analizar dicho archivo XML con un script</p>
+		<p id="demo">Texto Inicial.</p>
+		<p id="demo2"></p>
+
+		<button type="button" onclick="loadDoc()">Analizar documento</button>
+		<br><br>
+		<button onclick="window.location.href='../../index.html'">Menu principal</button>
+    </div>	
+<script>
+
+function loadDoc() {
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "ejemplo.xml", false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+    document.getElementById("demo").innerHTML = xmlDoc;
+
+    xmlhttp.onload = function() {
+    	const x = xmlDoc.getElementsByTagName("pais");
+		let texto ="Contenido archivo: <br>";
+		for (let i = 0; i < x.length; i++) { 
+			texto += x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + " | " +
+		    x[i].getElementsByTagName("nombre_pais")[0].childNodes[0].nodeValue + " | " +
+		    x[i].getElementsByTagName("capital")[0].childNodes[0].nodeValue + "<br>";
+		  }
+		 document.getElementById("demo2").innerHTML = texto;
+	}
+	xmlhttp.open("GET", "ejemplo.xml", false);
+    xmlhttp.send();
+}
+</script>
+
+</body>
+</html>

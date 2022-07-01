@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grupo04-Pregunta 4</title>
+</head>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+#background{position:absolute; width:99%; height:130%;}
+#fixed {position:absolute; top: 0px; left: 0px;}
+</style>
+<body>
+    <div>
+      <img id="background" src="../../Imagenes/fondo.jpg"/> 
+    </div>
+    <div id="fixed" style="padding-left:140px; padding-top: 50px;">
+      <h2>Pregunta 4</h2>
+      <p>Mostrar datos XML en una tabla utilizando AJAX.</p>
+      <p>Archivo utilizado: ejemplo.xml</p>
+      <button type="button" onclick="loadDoc()">Obtener lista de paises</button>
+      <br><br>
+      <table id="demo"></table><br>
+      <button onclick="window.location.href='../../index.html'">Menu principal</button>
+      <script>
+      function loadDoc() {
+        const xhttp = new XMLHttpRequest(); 
+        xhttp.onload = function() {
+          myFunction(this);
+        }
+        xhttp.open("GET", "ejemplo.xml");
+        xhttp.send();
+      }
+      function myFunction(xml) {
+        const xmlDoc = xml.responseXML;
+        const x = xmlDoc.getElementsByTagName("pais");
+        let table="<tr><th>ID</th><th>Nombre</th><th>Capital</th></tr>";
+        for (let i = 0; i <x.length; i++) { 
+          table += "<tr><td>" +
+          x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("nombre_pais")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("capital")[0].childNodes[0].nodeValue +
+          "</td></tr>";
+        }
+        document.getElementById("demo").innerHTML = table;
+      }
+      </script>
+    </div>
+</body>
+</html>
